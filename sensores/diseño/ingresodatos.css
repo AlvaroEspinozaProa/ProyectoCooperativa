@@ -1,0 +1,67 @@
+body{
+    background:#f4f6f9;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.contenedor{
+    max-width:700px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.text-explanation{
+    margin-bottom:30px;
+}
+
+.alert{
+    border-radius:10px;
+}
+
+.card{
+    border:none;
+    margin-top:20px;
+    border-radius:10px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card h6{
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+.form-label{
+    font-weight:600;
+}
+
+.form-control{
+    border-radius:10px;
+    padding:10px;
+}
+
+.form-control:focus{
+    box-shadow:0 0 10px rgba(13,110,253,.25);
+}
+
+.btn-primary{
+    border-radius:10px;
+    padding:10px;
+    font-weight:bold;
+}
+
+.btn-outline-secondary{
+    border-radius:10px;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualizar Sensor</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #bbdefb, #e3f2fd);
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background-color: #0d47a1 !important;
+    }
+
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+    }
+
+    .navbar-brand:hover, .nav-link:hover {
+      color: #bbdefb !important;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      max-width: 600px;
+      margin: 80px auto;
+      text-align: left; /* <-- texto alineado a la izquierda */
+    }
+
+    h1 {
+      color: #0d47a1;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-label i {
+      color: #1976d2;
+      margin-right: 6px;
+    }
+
+    .btn-primary {
+      background-color: #1976d2;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #0d47a1;
+      transform: scale(1.03);
+    }
+
+    /* Opcional: margen a los costados del texto */
+    .text-explanation {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../sistema.html"><i class="bi bi-cpu"></i> EcoTidy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../front/ingresodatos.html"><i class="bi bi-plus-circle"></i> Ingresar</a></li>
+          <li class="nav-item"><a class="nav-link" href="../front/borrardatos.html"><i class="bi bi-trash"></i> Borrar</a></li>
+          <li class="nav-item"><a class="nav-link" href="../front/reporte.html"><i class="bi bi-file-earmark-text"></i> reporte</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Formulario principal -->
+  <div class="container">
+    <div class="form-container">
+      <h1><i class="bi bi-pencil-square"></i> Actualizar Sensor</h1>
+
+      <!-- Texto explicativo para el usuario -->
+      <div class="text-explanation">
+        <div class="alert alert-info" role="alert">
+          <h5 class="fw-bold"><i class="bi bi-info-circle"></i> ¿Qué puedes hacer aquí?</h5>
+          Esta página te permite <strong>actualizar los datos de un sensor registrado</strong> en el sistema.  
+          Simplemente ingresa el <strong>ID del sensor</strong>, los <strong>nuevos datos</strong> y su <strong>unidad de medida</strong>.  
+          Luego, presiona <em>"Enviar"</em> para guardar los cambios en la base de datos.
+        </div>
+
+        <!-- Tarjeta explicativa -->
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h6 class="card-title"><i class="bi bi-lightbulb"></i> Cómo funciona:</h6>
+            <ul class="mb-0">
+              <li>El campo <strong>ID del sensor</strong> identifica cuál sensor se actualizará.</li>
+              <li>En <strong>Nuevos datos del sensor</strong> escribes el nuevo valor medido (por ejemplo, <em>25.3</em>).</li>
+              <li>En <strong>Unidad de medida</strong> indicas la unidad (como °C, %, Pa, etc.).</li>
+              <li>Cuando envías el formulario, la información se envía a un archivo para procesarse.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <form action="../back/actualizardatos.php" method="get">
+        <div class="mb-3">
+          <label for="s" class="form-label"><i class="bi bi-hash"></i> ID del sensor</label>
+          <input type="number" id="s" name="s" class="form-control" placeholder="Ej: 101" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="d" class="form-label"><i class="bi bi-activity"></i> Nuevos datos del sensor</label>
+          <input type="text" id="d" name="d" class="form-control" placeholder="Ej: 23.5" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="undm" class="form-label"><i class="bi bi-rulers"></i> Unidad de medida</label>
+          <input type="text" id="undm" name="undm" class="form-control" placeholder="Ej: °C, %, etc." required>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Enviar</button>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="text-center">
+          <a href="../sistema.html" class="btn btn-outline-secondary me-2"><i class="bi bi-house"></i> Página principal</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
