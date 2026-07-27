@@ -1,14 +1,13 @@
 <?php
 include('../clases/datos.php');
 
-$ID = $_GET['id'];
-$IDS = $_GET['ids'];
+$proeevedor = $_GET['id'];
 $fecha = $_GET['f'];
 $hora = $_GET['h'];
-$datos = $_GET['s'];
+$direccion = $_GET['s'];
 $UNDM = $_GET['undm'];
 
-$datos_sensor_contenedor = new Datos($ID,$IDS,$fecha,$hora,$datos,$UNDM);
+$datos_sensor_contenedor = new Datos($proeevedor,$fecha,$hora,$direccion,$UNDM);
 $datos_sensor_contenedor->ingresodatos();
 
 

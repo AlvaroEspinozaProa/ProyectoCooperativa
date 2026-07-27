@@ -7,7 +7,8 @@
     $ingresar = new usuario($corr,$con,$usua,'');
     $r = $ingresar->ingresarUsuario($usua);
     if($r == 1){
-        header('location:http://localhost/TMartinez/TP_trabajo_integrador/sensores/sistema.html');
+        header("Location: http://localhost/TMartinez/TP_trabajo_integrador/sensores/sistema.html");
+        exit();
     } else {
         echo "";
     }

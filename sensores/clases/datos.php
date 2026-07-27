@@ -2,25 +2,23 @@
     include('../../clase/base.php');
 
     class Datos {
-        private $ID;
-        private $IDS;
+        private $proveedor;
         private $fecha;
         private $hora;
-        private $datos;
+        private $direccion;
         private $UNDM;
 
-        public function __construct($id,$ids,$f,$h,$d,$undm) {
-            $this->ID = $id;
-            $this->IDS = $ids;
+        public function __construct($pro,$f,$h,$d,$undm) {
+            $this->proveedor = $pro;
             $this->fecha = $f;
             $this->hora = $h;
-            $this->datos = $d;
+            $this->direccion = $d;
             $this->UNDM = $undm;
         }
         // ... Aquí irían tus propiedades y constructor
         public function ingresodatos() {
-            $sql = "INSERT INTO datos_sensores (ID, IDS, fecha, hora, datos, UNDM)
-                    VALUES ('$this->ID', '$this->IDS', '$this->fecha', '$this->hora', '$this->datos', '$this->UNDM');";
+            $sql = "INSERT INTO datos_sensores (proveedor, fecha, hora, direccion, UNDM)
+                    VALUES ('$this->proveedor', '$this->fecha', '$this->hora', '$this->direccion', '$this->UNDM');";
 
             $bd = new BaseDeDatos('localhost','3307','','root','','test');
             if ($bd->connect()) {
@@ -200,24 +198,21 @@
 
             if ($bd->connect()) {
 
-                // Obtener sensores para el SELECT
-                $sql_sensores = "SELECT DISTINCT IDS FROM datos_sensores ORDER BY IDS ASC;";
+                // Obtener proveedores para el SELECT
+                $sql_sensores = "SELECT DISTINCT proveedor FROM datos_sensores ORDER BY proveedor ASC;";
                 $sensores = $bd->executeQuery($sql_sensores);
 
                 // Obtener parámetros GET
-                $inputID = isset($_GET['buscar_id']) ? trim($_GET['buscar_id']) : "";
-                $selectID = isset($_GET['sensor']) ? $_GET['sensor'] : "todos";
+                $inputProveedor = isset($_GET['buscar_proveedor']) ? trim($_GET['buscar_proveedor']) : "";
+                $selectProveedor = isset($_GET['proveedor']) ? $_GET['proveedor'] : "todos";
 
                 // Lógica del filtro
-                if ($inputID !== "") {
-                    $sql = "SELECT * FROM datos_sensores WHERE IDS = '$inputID';";
-                    $filtroActivo = $inputID;
-                } elseif ($selectID !== "todos") {
-                    $sql = "SELECT * FROM datos_sensores WHERE IDS = '$selectID';";
-                    $filtroActivo = $selectID;
+                if ($inputProveedor != "") {
+                    $sql = "SELECT * FROM datos_sensores WHERE proveedor = '$inputProveedor';";
+                } elseif ($selectProveedor != "todos") {
+                    $sql = "SELECT * FROM datos_sensores WHERE proveedor = '$selectProveedor';";
                 } else {
                     $sql = "SELECT * FROM datos_sensores;";
-                    $filtroActivo = "todos";
                 }
 
                 $resultado = $bd->executeQuery($sql);
@@ -253,63 +248,61 @@
 
                 <body>
 
-                <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <div class="container">
-                        <a class="navbar-brand fw-bold" href="../sistema.html"><i class="bi bi-cpu"></i> EcoTidy</a>
+                        <a class="navbar-brand fw-bold" href="../sistema.html">
+                            <i class="bi bi-cpu"></i> EcoTidy
+                        </a>
                     </div>
                 </nav>
 
                 <div class="container mt-5">
 
-                    <!-- Tarjeta filtro -->
                     <div class="card shadow-lg mb-4">
                         <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0"><i class="bi bi-search"></i> Buscar datos de sensores</h4>
+                            <h4 class="mb-0">
+                                <i class="bi bi-search"></i> Buscar datos de sensores
+                            </h4>
                         </div>
 
                         <div class="card-body">
 
                             <form method="GET" class="row g-3">
 
-                                <!-- Input manual -->
                                 <div class="col-md-4">
-                                    <label class="form-label fw-bold">Ingresar ID del sensor</label>
-                                    <input 
-                                        type="number" 
-                                        name="buscar_id" 
-                                        class="form-control" 
-                                        placeholder="Ej: 101" 
-                                        value="'.($inputID !== "" ? $inputID : "").'"
+                                    <label class="form-label fw-bold">Ingresar proveedor</label>
+                                    <input
+                                        type="text"
+                                        name="buscar_proveedor"
+                                        class="form-control"
+                                        placeholder="Ej: EcoTidy"
+                                        value="'.($inputProveedor != "" ? $inputProveedor : "").'"
                                     >
                                 </div>
 
-                                <!-- Select de sensores -->
                                 <div class="col-md-4">
-                                    <label class="form-label fw-bold">Seleccionar sensor</label>
-                                    <select name="sensor" class="form-select">
+                                    <label class="form-label fw-bold">Seleccionar proveedor</label>
+                                    <select name="proveedor" class="form-select">
                                         <option value="todos">Todos</option>';
 
                                         while ($s = $sensores->fetch_assoc()) {
-                                            $id = $s["IDS"];
-                                            $selected = ($selectID == $id) ? "selected" : "";
-                                            echo "<option value=\"$id\" $selected>Sensor $id</option>";
+                                            $proveedor = $s["proveedor"];
+                                            $selected = ($selectProveedor == $proveedor) ? "selected" : "";
+                                            echo "<option value=\"$proveedor\" $selected>$proveedor</option>";
                                         }
 
-                                echo '
+                echo '
                                     </select>
                                 </div>
 
-                                <!-- Botón buscar -->
                                 <div class="col-md-2 d-flex align-items-end">
                                     <button class="btn btn-primary w-100">
                                         <i class="bi bi-search"></i> Buscar
                                     </button>
                                 </div>
 
-                                <!-- Botón ver todos -->
                                 <div class="col-md-2 d-flex align-items-end">
-                                    <a href="?sensor=todos&buscar_id=" class="btn btn-secondary w-100">
+                                    <a href="?proveedor=todos&buscar_proveedor=" class="btn btn-secondary w-100">
                                         <i class="bi bi-list"></i> Ver todos
                                     </a>
                                 </div>
@@ -320,13 +313,14 @@
                     </div>
                 ';
 
-                // Mostrar tabla
                 if ($resultado && $resultado->num_rows > 0) {
 
                     echo '
                     <div class="card shadow-lg">
                         <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0"><i class="bi bi-file-earmark-bar-graph"></i> Datos Registrados</h4>
+                            <h4 class="mb-0">
+                                <i class="bi bi-file-earmark-bar-graph"></i> Datos Registrados
+                            </h4>
                         </div>
 
                         <div class="card-body">
@@ -334,8 +328,7 @@
                                 <table class="table table-striped table-hover table-bordered align-middle">
                                     <thead class="table-dark">
                                         <tr>
-                                            <th>Contenedor</th>
-                                            <th>Sensor</th>
+                                            <th>Proveedor</th>
                                             <th>Fecha</th>
                                             <th>Hora</th>
                                             <th>Datos</th>
@@ -348,11 +341,10 @@
                     while ($fila = $resultado->fetch_assoc()) {
                         echo "
                             <tr>
-                                <td>{$fila['ID']}</td>
-                                <td>{$fila['IDS']}</td>
+                                <td>{$fila['proveedor']}</td>
                                 <td>{$fila['fecha']}</td>
                                 <td>{$fila['hora']}</td>
-                                <td>{$fila['datos']}</td>
+                                <td>{$fila['direccion']}</td>
                                 <td>{$fila['UNDM']}</td>
                             </tr>
                         ";
@@ -371,12 +363,14 @@
                     ';
 
                 } else {
+
                     echo "
                         <div class='alert alert-warning text-center shadow-sm'>
-                            <i class='bi bi-exclamation-triangle'></i> 
+                            <i class='bi bi-exclamation-triangle'></i>
                             No hay datos para el filtro seleccionado.
                         </div>
                     ";
+
                 }
 
                 echo "</div></body></html>";
@@ -384,15 +378,14 @@
                 $bd->close();
 
             } else {
-                echo "<div class='alert alert-danger mt-5 text-center'>
-                        Error al conectar con la base de datos.
-                    </div>";
+
+                echo "
+                <div class='alert alert-danger mt-5 text-center'>
+                    Error al conectar con la base de datos.
+                </div>
+                ";
+
             }
         }
-
     }
-
-
-
-
 ?>
