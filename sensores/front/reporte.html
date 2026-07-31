@@ -1,142 +1,121 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reporte del Sensor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte</title>
 
-  <!-- Bootstrap 5 y Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    body {
-      background: linear-gradient(135deg, #bbdefb, #e3f2fd);
-      min-height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    <link rel="stylesheet" href="../diseño/reporte.css">
 
-    .navbar {
-      background-color: #0d47a1 !important;
-    }
-
-    .navbar-brand, .nav-link {
-      color: #fff !important;
-    }
-
-    .navbar-brand:hover, .nav-link:hover {
-      color: #bbdefb !important;
-    }
-
-    .form-container {
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-      padding: 40px;
-      max-width: 600px;
-      margin: 80px auto;
-      text-align: left;
-    }
-
-    h1 {
-      color: #0d47a1;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .form-label i {
-      color: #1976d2;
-      margin-right: 6px;
-    }
-
-    .btn-primary {
-      background-color: #1976d2;
-      border: none;
-      transition: 0.3s;
-    }
-
-    .btn-primary:hover {
-      background-color: #0d47a1;
-      transform: scale(1.03);
-    }
-
-    .text-explanation {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-  </style>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark barra-nav">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../sistema.html"><i class="bi bi-cpu"></i> EcoTidy</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="../front/ingresodatos.html"><i class="bi bi-plus-circle"></i> Ingresar</a></li>
-          <li class="nav-item"><a class="nav-link" href="../front/actualizardatos.html"><i class="bi bi-pencil-square"></i> Actualizar</a></li>
-          <li class="nav-item"><a class="nav-link" href="../front/borrardatos.html"><i class="bi bi-trash"></i> Borrar</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Formulario principal -->
-  <div class="container">
-    <div class="form-container">
-      <h1><i class="bi bi-file-earmark-bar-graph"></i> Generar Reporte</h1>
+        <a class="navbar-brand fw-bold" href="../sistema.html">
+            <i class="bi bi-building"></i> Cooperativa
+        </a>
 
-      <!-- Texto explicativo -->
-      <div class="text-explanation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- Descripción actualizada -->
-        <div class="alert alert-info" role="alert">
-          <h5 class="fw-bold"><i class="bi bi-info-circle"></i> ¿Qué hace esta página?</h5>
-          Esta página te permite acceder rápidamente al <strong>reporte completo</strong> de todos los sensores y contenedores registrados en el sistema.  
-          Simplemente presiona el botón y serás dirigido a la sección donde podrás ver o filtrar toda la información disponible.
-        </div>
+        <div class="collapse navbar-collapse" id="menu">
 
-        <!-- Instrucciones simplificadas -->
-        <div class="card mb-4 shadow-sm">
-          <div class="card-body">
-            <h6 class="card-title"><i class="bi bi-lightbulb"></i> Instrucciones:</h6>
-            <ul class="mb-0">
-              <li>Presiona el botón inferior para ir a la página del reporte.</li>
-              <li>Desde allí podrás ver todos los sensores registrados.</li>
-              <li>También podrás aplicar filtros y generar informes específicos.</li>
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../sistema.html">
+                        <i class="bi bi-house"></i> Inicio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        <i class="bi bi-pencil-square"></i> Registrar trámite
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../front/reporte.html">reporte
+                        <i class="bi bi-file-earmark-text"></i> 
+                    </a>
+                </li>
+
             </ul>
-          </div>
-        </div>
-      </div>
 
-      <!-- Botón actualizado (ya no pide datos) -->
-      <form action="../back/reporte.php" method="get">
-
-        <div class="d-grid mt-4">
-          <button type="submit" class="btn btn-primary">
-            <i class="bi bi-send"></i> Ver reporte de todos los sensores y contenedores ingresados
-          </button>
         </div>
 
-        <hr class="my-4">
-
-        <div class="text-center">
-          <a href="../sistema.html" class="btn btn-outline-secondary">
-            <i class="bi bi-house"></i> Página principal
-          </a>
-        </div>
-      </form>
     </div>
-  </div>
+</nav>
+<div class="contenedor">
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Texto explicativo -->
+<div class="text-explanation">
+
+    <!-- Descripción -->
+    <div class="alert alert-info" role="alert">
+        <h5 class="fw-bold">
+            <i class="bi bi-info-circle"></i>
+            ¿Qué hace esta página?
+        </h5>
+
+        Esta página te permite acceder al <strong>reporte completo de los trámites realizados por los proveedores</strong> registrados en la cooperativa.
+        Desde aquí podrás consultar la información almacenada, como el <strong>nombre del proveedor</strong>, la <strong>fecha en la que realizó el trámite</strong> y la <strong>dirección correspondiente</strong>.
+    </div>
+
+    <!-- Instrucciones -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+
+            <h6 class="card-title">
+                <i class="bi bi-lightbulb"></i>
+                Instrucciones
+            </h6>
+
+            <ul class="mb-0">
+                <li>Presiona el botón para acceder al reporte de trámites.</li>
+                <li>Visualiza todos los trámites registrados por los proveedores.</li>
+                <li>Consulta la fecha en que se realizó cada trámite.</li>
+                <li>Verifica la dirección asociada a cada proveedor.</li>
+                <li>Utiliza los filtros disponibles para encontrar información específica de forma rápida.</li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Formulario -->
+<form action="../back/reporte.php" method="get">
+
+    <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-file-earmark-text"></i>
+            Ver reporte de trámites realizados por los proveedores
+        </button>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="text-center">
+        <a href="../sistema.html" class="btn btn-outline-secondary">
+            <i class="bi bi-house"></i>
+            Página principal
+        </a>
+    </div>
+
+</form>
+
+</div>
+
 </body>
-</html>
 
+</html>
 

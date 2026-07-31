@@ -261,7 +261,7 @@
                     <div class="card shadow-lg mb-4">
                         <div class="card-header bg-primary text-white">
                             <h4 class="mb-0">
-                                <i class="bi bi-search"></i> Buscar datos de sensores
+                                <i class="bi bi-search"></i> Buscar tramites realizados
                             </h4>
                         </div>
 
@@ -331,7 +331,7 @@
                                             <th>Proveedor</th>
                                             <th>Fecha</th>
                                             <th>Hora</th>
-                                            <th>Datos</th>
+                                            <th>Direccion</th>
                                             <th>Unidad de Medida</th>
                                         </tr>
                                     </thead>

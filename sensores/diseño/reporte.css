@@ -1,11 +1,14 @@
+/* Fondo de la página */
 body{
     background: linear-gradient(135deg, #2d6a4f, #1b4d3e);
     font-family: Arial, Helvetica, sans-serif;
-    color: #2d4739;
+    color: #5F935D;
 }
 
+/* Contenedor principal */
 .contenedor{
-    max-width:700px;
+    width:700px;
+    max-width:90%;
     margin:40px auto;
     background:#ffffff;
     padding:30px;
@@ -13,10 +16,12 @@ body{
     box-shadow:0 8px 20px rgba(73,121,86,.15);
 }
 
+/* Espacio inferior */
 .text-explanation{
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
+/* Caja informativa */
 .alert{
     background:#e8f6ec !important;
     border:1px solid #b8dcc2;
@@ -24,24 +29,33 @@ body{
     border-radius:12px;
 }
 
-.card{
-    border:none;
-    margin-top:20px;
-    border-radius:12px;
-    background:#f7fcf8;
-    box-shadow:0 4px 12px rgba(73,121,86,.12);
-}
-
-.card-body{
-    padding:20px;
-}
-
-.card h6{
+/* Título del mensaje */
+.alert h5{
     color:#2f6d45;
     font-weight:bold;
     margin-bottom:15px;
 }
 
+/* Tarjeta */
+.card{
+    border:none;
+    border-radius:12px;
+    background:#f7fcf8;
+    box-shadow:0 4px 12px rgba(73,121,86,.12);
+}
+
+/* Contenido */
+.card-body{
+    padding:20px;
+}
+
+/* Título */
+.card-title{
+    color:#2f6d45;
+    font-weight:bold;
+}
+
+/* Lista */
 ul{
     padding-left:20px;
 }
@@ -50,11 +64,7 @@ li{
     margin-bottom:8px;
 }
 
-.form-label{
-    color:#355e3b;
-    font-weight:600;
-}
-
+/* Campos del formulario */
 .form-control{
     border:1px solid #b8dcc2;
     border-radius:10px;
@@ -62,18 +72,23 @@ li{
 }
 
 .form-control:focus{
-    border-color:#6ca87c;
-    box-shadow:0 0 8px rgba(108,168,124,.35);
-    outline:none;
+    border-color:#7fb98d;
+    box-shadow:0 0 8px rgba(127,185,141,.35);
 }
 
+/* Etiquetas */
+.form-label{
+    color:#355e3b;
+    font-weight:600;
+}
+
+/* Botón principal */
 .btn-primary{
     background:#2d6a4f !important;
     border:none !important;
     border-radius:10px;
-    padding:10px;
+    padding:12px;
     font-weight:bold;
-    transition:.3s;
 }
 
 .btn-primary:hover{
@@ -83,13 +98,27 @@ li{
 .btn-outline-secondary{
     border:2px solid #2d6a4f;
     color:#2d6a4f;
-    border-radius:10px;
-    transition:.3s;
 }
 
 .btn-outline-secondary:hover{
     background:#2d6a4f;
     color:white;
+}
+
+/* Línea */
+hr{
+    border-color:#cfe8d5;
+    margin:30px 0;
+}
+
+/* Centrar botón */
+.volver{
+    text-align:center;
+}
+
+/* Iconos */
+.bi{
+    color:#4f8b63;
 }
 /* Barra de navegación */
 .barra-nav{
