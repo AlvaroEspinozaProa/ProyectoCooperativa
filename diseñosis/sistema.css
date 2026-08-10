@@ -1,0 +1,489 @@
+ /* =========================
+    CONFIGURACIÓN GENERAL
+ ========================= */
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #2d6a4f,
+        #1b4d3e
+    );
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #2d4739;
+
+}
+
+
+/* =========================
+   BARRA DE NAVEGACIÓN
+========================= */
+
+.barra-nav {
+
+    background: linear-gradient(
+        90deg,
+        #2d6a4f,
+        #1b4d3e
+    );
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.20);
+
+    min-height: 65px;
+
+}
+
+
+.navbar-brand {
+
+    font-size: 1.4rem;
+
+    color: white !important;
+
+}
+
+
+.navbar-brand i {
+
+    margin-right: 8px;
+
+}
+
+
+.navbar-nav {
+
+    align-items: center;
+
+}
+
+
+.nav-link {
+
+    color: #e8f5ec !important;
+
+    font-weight: 500;
+
+    padding: 10px 14px !important;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-link:hover {
+
+    color: white !important;
+
+    background: rgba(255, 255, 255, 0.10);
+
+}
+
+
+.nav-link.active {
+
+    color: white !important;
+
+    font-weight: bold;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-bottom: 2px solid #b7dfbf;
+
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor {
+
+    width: calc(100% - 100px);
+
+    max-width: 1400px;
+
+    min-height: calc(100vh - 150px);
+
+    margin: 25px auto;
+
+    background: #ffffff;
+
+    padding: 30px 40px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.icono-principal {
+
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #d5eadb;
+
+    color: #2d6a4f;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+}
+
+
+.encabezado h1 {
+
+    margin: 0;
+
+    color: #2d6a4f;
+
+    font-size: 2rem;
+
+    font-weight: bold;
+
+}
+
+
+.encabezado p {
+
+    margin: 3px 0 0;
+
+    color: #6a7c70;
+
+}
+
+
+/* =========================
+   ALERTA
+========================= */
+
+.alert {
+
+    background: #e8f6ec !important;
+
+    border: 1px solid #b8dcc2;
+
+    color: #355e3b;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+}
+
+
+.alert h5 {
+
+    color: #2d6a4f;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================
+   TARJETA DE INFORMACIÓN
+========================= */
+
+.informacion-card {
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #f7fcf8;
+
+    margin-top: 20px;
+
+}
+
+
+.card-body {
+
+    padding: 25px;
+
+}
+
+
+.card-title {
+
+    color: #2f6d45;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   BURBUJAS
+========================= */
+
+.info-burbuja {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    height: 100%;
+
+    padding: 18px;
+
+    background: #eef8f1;
+
+    border: 1px solid #c9e3d0;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 3px 8px rgba(73, 121, 86, 0.08);
+
+    transition: 0.3s;
+
+}
+
+
+.info-burbuja:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(73, 121, 86, 0.15);
+
+    background: #e7f5eb;
+
+}
+
+
+.info-icon {
+
+    min-width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #d5eadb;
+
+    color: #2d6a4f;
+
+    border-radius: 50%;
+
+    font-size: 19px;
+
+}
+
+
+.info-burbuja strong {
+
+    display: block;
+
+    color: #2d6a4f;
+
+    font-size: 1rem;
+
+    margin-bottom: 5px;
+
+}
+
+
+.info-burbuja p {
+
+    margin: 0;
+
+    color: #4b6353;
+
+    font-size: 0.92rem;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   OPCIONES
+========================= */
+
+.opciones {
+
+    margin-top: 30px;
+
+}
+
+
+.opciones h5 {
+
+    color: #2d6a4f;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =========================
+   BOTONES PRINCIPALES
+========================= */
+
+.btn-custom {
+
+    background: #2d6a4f !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 10px;
+
+    padding: 13px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-custom:hover {
+
+    background: #1b4d3e !important;
+
+    color: white !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(45, 106, 79, 0.25);
+
+}
+
+
+/* =========================
+   BOTONES SECUNDARIOS
+========================= */
+
+.btn-outline-secondary {
+
+    border: 2px solid #2d6a4f;
+
+    color: #2d6a4f;
+
+    border-radius: 10px;
+
+    padding: 11px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-outline-secondary:hover {
+
+    background: #2d6a4f;
+
+    color: white;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .contenedor {
+
+        width: calc(100% - 20px);
+
+        min-height: calc(100vh - 90px);
+
+        margin: 10px auto;
+
+        padding: 25px 20px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .encabezado {
+
+        align-items: flex-start;
+
+    }
+
+
+    .encabezado h1 {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    .icono-principal {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 24px;
+
+    }
+
+
+    .info-burbuja {
+
+        padding: 15px;
+
+    }
+
+}

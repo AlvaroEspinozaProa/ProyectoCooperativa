@@ -3,22 +3,26 @@
 
     class Datos {
         private $proveedor;
+        private $Mat;
         private $fecha;
         private $hora;
         private $direccion;
+        private $prod; 
         private $UNDM;
 
-        public function __construct($pro,$f,$h,$d,$undm) {
+        public function __construct($pro,$mat,$f,$h,$d,$produ,$undm) {
             $this->proveedor = $pro;
+            $this->Mat = $mat;
             $this->fecha = $f;
             $this->hora = $h;
             $this->direccion = $d;
+            $this->prod = $produ;
             $this->UNDM = $undm;
         }
         // ... Aquí irían tus propiedades y constructor
         public function ingresodatos() {
-            $sql = "INSERT INTO datos_sensores (proveedor, fecha, hora, direccion, UNDM)
-                    VALUES ('$this->proveedor', '$this->fecha', '$this->hora', '$this->direccion', '$this->UNDM');";
+            $sql = "INSERT INTO datos_sensores (proveedor, MATRICULA, fecha, hora, direccion, Producto, UNDM)
+                    VALUES ('$this->proveedor','$this->Mat', '$this->fecha', '$this->hora', '$this->direccion','$this->prod', '$this->UNDM');";
 
             $bd = new BaseDeDatos('localhost','3307','','root','','test');
             if ($bd->connect()) {

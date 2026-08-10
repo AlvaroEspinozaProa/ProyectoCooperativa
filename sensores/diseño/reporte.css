@@ -120,28 +120,51 @@ hr{
 .bi{
     color:#4f8b63;
 }
-/* Barra de navegación */
-.barra-nav{
-    background: linear-gradient(90deg,#2d6a4f,#1b4d3e);
-    box-shadow:0 3px 12px rgba(0,0,0,.20);
+/* =========================
+   BARRA DE NAVEGACIÓN
+========================= */
+
+.barra-nav {
+    background: linear-gradient(90deg, #2d6a4f, #1b4d3e);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.20);
+    min-height: 65px;
 }
 
-.navbar-brand{
-    font-size:1.4rem;
-    color:white !important;
+.barra-nav .container {
+    display: flex;
+    align-items: center;
 }
 
-.nav-link{
-    color:#e8f5ec !important;
-    font-weight:500;
-    transition:.3s;
+.navbar-brand {
+    font-size: 1.4rem;
+    color: white !important;
 }
 
-.nav-link:hover{
-    color:#ffffff !important;
+.navbar-brand i {
+    margin-right: 6px;
 }
 
-.nav-link.active{
-    font-weight:bold;
-    border-bottom:2px solid #b7dfbf;
+.navbar-nav {
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    color: #e8f5ec !important;
+    font-weight: 500;
+    padding: 10px 14px !important;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.nav-link.active {
+    color: white !important;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.12);
+    border-bottom: 2px solid #b7dfbf;
 }

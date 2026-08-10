@@ -1,118 +1,382 @@
-body{
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
     background: linear-gradient(135deg, #2d6a4f, #1b4d3e);
     font-family: Arial, Helvetica, sans-serif;
     color: #2d4739;
 }
 
-.contenedor{
-    max-width:700px;
-    margin:40px auto;
-    background:#ffffff;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 8px 20px rgba(73,121,86,.15);
+
+/* =========================
+   BARRA DE NAVEGACIÓN
+========================= */
+
+.barra-nav {
+    background: linear-gradient(90deg, #2d6a4f, #1b4d3e);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.20);
 }
 
-.text-explanation{
-    margin-bottom:30px;
+.navbar-brand {
+    font-size: 1.4rem;
+    color: white !important;
 }
 
-.alert{
-    background:#e8f6ec !important;
-    border:1px solid #b8dcc2;
-    color:#355e3b;
-    border-radius:12px;
+.nav-link {
+    color: #e8f5ec !important;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-.card{
-    border:none;
-    margin-top:20px;
-    border-radius:12px;
-    background:#f7fcf8;
-    box-shadow:0 4px 12px rgba(73,121,86,.12);
+.nav-link:hover {
+    color: #ffffff !important;
 }
 
-.card-body{
-    padding:20px;
+.nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #b7dfbf;
 }
 
-.card h6{
-    color:#2f6d45;
-    font-weight:bold;
-    margin-bottom:15px;
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.contenedor {
+    width: calc(100% - 50px);
+    min-height: calc(100vh - 110px);
+
+    margin: 25px auto;
+
+    background: #ffffff;
+
+    padding: 35px 45px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    box-sizing: border-box;
 }
 
-ul{
-    padding-left:20px;
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.text-explanation {
+    margin-bottom: 30px;
 }
 
-li{
-    margin-bottom:8px;
+
+/* =========================
+   ALERTA
+========================= */
+
+.alert {
+    background: #e8f6ec !important;
+    border: 1px solid #b8dcc2;
+    color: #355e3b;
+    border-radius: 12px;
+    padding: 20px;
 }
 
-.form-label{
-    color:#355e3b;
-    font-weight:600;
+.alert h5 {
+    color: #2d6a4f;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.form-control{
-    border:1px solid #b8dcc2;
-    border-radius:10px;
-    padding:10px;
+
+/* =========================
+   TARJETA DE INFORMACIÓN
+========================= */
+
+.card-body ul {
+    height: 100%;
+    margin-bottom: 0;
 }
 
-.form-control:focus{
-    border-color:#6ca87c;
-    box-shadow:0 0 8px rgba(108,168,124,.35);
-    outline:none;
+.card-body li {
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
-.btn-primary{
-    background:#2d6a4f !important;
-    border:none !important;
-    border-radius:10px;
-    padding:10px;
-    font-weight:bold;
-    transition:.3s;
+.card-body li:last-child {
+    margin-bottom: 0;
 }
 
-.btn-primary:hover{
-    background:#1b4d3e !important;
+.card-body strong {
+    color: #2d6a4f;
 }
 
-.btn-outline-secondary{
-    border:2px solid #2d6a4f;
-    color:#2d6a4f;
-    border-radius:10px;
-    transition:.3s;
+/* =========================
+   LISTA
+========================= */
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 0;
 }
 
-.btn-outline-secondary:hover{
-    background:#2d6a4f;
-    color:white;
-}
-/* Barra de navegación */
-.barra-nav{
-    background: linear-gradient(90deg,#2d6a4f,#1b4d3e);
-    box-shadow:0 3px 12px rgba(0,0,0,.20);
+li {
+    margin-bottom: 8px;
 }
 
-.navbar-brand{
-    font-size:1.4rem;
-    color:white !important;
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.form-label {
+    color: #355e3b;
+    font-weight: 600;
 }
 
-.nav-link{
-    color:#e8f5ec !important;
-    font-weight:500;
-    transition:.3s;
+.form-control {
+    border: 1px solid #b8dcc2;
+    border-radius: 10px;
+    padding: 10px;
+    color: #355e3b;
+    background-color: #ffffff;
+    transition: 0.3s;
 }
 
-.nav-link:hover{
-    color:#ffffff !important;
+.form-control:focus {
+    border-color: #6ca87c;
+    box-shadow: 0 0 8px rgba(108, 168, 124, 0.35);
+    outline: none;
 }
 
-.nav-link.active{
-    font-weight:bold;
-    border-bottom:2px solid #b7dfbf;
+
+/* =========================
+   BOTÓN PRINCIPAL
+========================= */
+
+.btn-primary {
+    background: #2d6a4f !important;
+    border: none !important;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #1b4d3e !important;
+}
+
+
+/* =========================
+   BOTÓN SECUNDARIO
+========================= */
+
+.btn-outline-secondary {
+    border: 2px solid #2d6a4f;
+    color: #2d6a4f;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn-outline-secondary:hover {
+    background: #2d6a4f;
+    color: white;
+}
+
+
+/* =========================
+   LÍNEA SEPARADORA
+========================= */
+
+hr {
+    border-color: #d5e8da;
+    margin: 25px 0;
+}
+
+
+/* =========================
+   ADAPTACIÓN A CELULARES
+========================= */
+
+@media (max-width: 768px) {
+
+    .contenedor {
+        width: calc(100% - 20px);
+        min-height: calc(100vh - 90px);
+
+        margin: 10px auto;
+
+        padding: 25px 20px;
+
+        border-radius: 14px;
+    }
+
+    .alert {
+        padding: 15px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+}
+ /* =========================
+    BURBUJAS DE INFORMACIÓN
+ ========================= */
+
+.info-burbuja {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    height: 100%;
+    padding: 18px;
+
+    background: #eef8f1;
+
+    border: 1px solid #c9e3d0;
+    border-radius: 15px;
+
+    box-shadow: 0 3px 8px rgba(73, 121, 86, 0.08);
+
+    transition: 0.3s;
+}
+
+.info-burbuja:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 14px rgba(73, 121, 86, 0.15);
+
+    background: #e7f5eb;
+}
+
+
+/* Icono de cada burbuja */
+
+.info-icon {
+    min-width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #d5eadb;
+
+    color: #2d6a4f;
+
+    border-radius: 50%;
+
+    font-size: 19px;
+}
+
+
+/* Título */
+
+.info-burbuja strong {
+    display: block;
+
+    color: #2d6a4f;
+
+    font-size: 1rem;
+
+    margin-bottom: 5px;
+}
+
+
+/* Descripción */
+
+.info-burbuja p {
+    margin: 0;
+
+    color: #4b6353;
+
+    font-size: 0.92rem;
+
+    line-height: 1.5;
+}
+/* =========================
+   SELECT - PRODUCTO
+========================= */
+
+.form-select {
+
+    border: 1px solid #b8dcc2;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    color: #355e3b;
+
+    background-color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    transition: 0.3s;
+
+}
+
+
+/* Cuando se selecciona el select */
+
+.form-select:focus {
+
+    border-color: #6ca87c;
+
+    box-shadow: 0 0 8px rgba(108, 168, 124, 0.35);
+
+    outline: none;
+
+}
+
+
+/* Opciones del menú */
+
+.form-select option {
+
+    color: #355e3b;
+
+    background-color: #ffffff;
+
+}
+
+
+/* Opción deshabilitada */
+
+.form-select option:disabled {
+
+    color: #8aa393;
+
+}   
+.form-select {
+    border: 1px solid #b8dcc2;
+    border-radius: 10px;
+    padding: 10px;
+    color: #355e3b;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+}
+
+.form-select:focus {
+    border-color: #6ca87c;
+    box-shadow: 0 0 8px rgba(108, 168, 124, 0.35);
+    outline: none;
+}
+
+.form-select:hover {
+    border-color: #6ca87c;
+}
+
+.form-select option {
+    color: #355e3b;
+    background-color: #ffffff;
+}
+
+.form-select option:disabled {
+    color: #8aa393;
 }

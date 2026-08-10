@@ -77,22 +77,100 @@
 
             </div>
 
-            <div class="card shadow-sm">
+                    <div class="card shadow-sm">
 
-                <div class="card-body">
+            <div class="card-body">
 
-                    <h6>
-                        <i class="bi bi-lightbulb"></i>
-                        Información
-                    </h6>
+                <h6 class="mb-4">
+                    <i class="bi bi-lightbulb"></i>
+                    Información sobre el registro
+                </h6>
 
-                    <ul>
-                        <li><strong>Proveedor:</strong> nombre de la persona o empresa que realizó el trámite.</li>
-                        <li><strong>Fecha:</strong> día en que se realizó el trámite.</li>
-                        <li><strong>Hora:</strong> hora del registro.</li>
-                        <li><strong>Dirección:</strong> domicilio del proveedor.</li>
-                        <li><strong>Tipo de trámite:</strong> información adicional del trámite realizado.</li>
-                    </ul>
+                <div class="row g-3">
+
+                    <!-- Proveedor -->
+                    <div class="col-md-6">
+                        <div class="info-burbuja">
+                            <div class="info-icon">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+
+                            <div>
+                                <strong>Proveedor</strong>
+                                <p>
+                                    Nombre de la persona o empresa que realizó el trámite.
+                                    Permite identificar quién llevó a cabo la gestión.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fecha -->
+                    <div class="col-md-6">
+                        <div class="info-burbuja">
+                            <div class="info-icon">
+                                <i class="bi bi-calendar-event"></i>
+                            </div>
+
+                            <div>
+                                <strong>Fecha</strong>
+                                <p>
+                                    Día en que se realizó el trámite.
+                                    Ayuda a mantener un registro ordenado de cada gestión.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hora -->
+                    <div class="col-md-6">
+                        <div class="info-burbuja">
+                            <div class="info-icon">
+                                <i class="bi bi-clock"></i>
+                            </div>
+
+                            <div>
+                                <strong>Hora</strong>
+                                <p>
+                                    Momento en que se realizó o registró el trámite.
+                                    Permite llevar un control más detallado de las actividades.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dirección -->
+                    <div class="col-md-6">
+                        <div class="info-burbuja">
+                            <div class="info-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+
+                            <div>
+                                <strong>Dirección</strong>
+                                <p>
+                                    Domicilio o ubicación relacionada con el proveedor.
+                                    Permite identificar el lugar correspondiente al trámite.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tipo de trámite -->
+                    <div class="col-md-6">
+                        <div class="info-burbuja">
+                            <div class="info-icon">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </div>
+
+                            <div>
+                                <strong>UNDM</strong>
+                                <p>
+                                    Tipo de unidad de medida utilizada, ejemplo: kilogramo, toneladas, litros, etc.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -121,6 +199,21 @@
 
                 <input type="date" class="form-control" id="f" name="f" required>
             </div>
+            <div class="mb-3">
+
+                <label for="mat" class="form-label">
+                    <i class="bi bi-truck"></i>
+                    Matrícula del transporte
+                </label>
+
+                <input type="text"
+                    class="form-control"
+                    name="mat"
+                    id="mat"
+                    placeholder="Ingrese la matrícula del transporte"
+                    required>
+
+            </div>
 
             <div class="mb-3">
                 <label for="h" class="form-label">
@@ -139,14 +232,56 @@
 
                 <input type="text" class="form-control" id="s" name="s" required>
             </div>
-
             <div class="mb-3">
-                <label for="undm" class="form-label">
-                    <i class="bi bi-file-earmark-text"></i>
-                    Tipo de trámite
+
+                <label for="prod" class="form-label">
+                    <i class="bi bi-box-seam"></i>
+                    Producto a transportar
                 </label>
 
-                <input type="text" class="form-control" id="undm" name="undm" required>
+                <select class="form-select" name="prod" id="prod" required>
+
+                    <option value="" selected disabled>
+                        Seleccioná un producto
+                    </option>
+
+                    <option value="soja">Soja</option>
+                    <option value="maiz">Maíz</option>
+                    <option value="trigo">Trigo</option>
+                    <option value="girasol">Girasol</option>
+                    <option value="sorgo">Sorgo</option>
+                    <option value="otro">Otro</option>
+
+                </select>
+
+            </div>
+            <div class="mb-3">
+
+                <label for="undm" class="form-label">
+                    <i class="bi bi-file-earmark-text"></i>
+                    Unidad de medida
+                </label>
+
+                <select name="undm" id="undm" class="form-select" required>
+
+                    <option value="" selected disabled>
+                        Seleccione la unidad de medida
+                    </option>
+
+                    <option value="kg">
+                        Kg
+                    </option>
+
+                    <option value="t">
+                        Toneladas
+                    </option>
+
+                    <option value="otro">
+                        Otro
+                    </option>
+
+                </select>
+
             </div>
 
             <button type="submit" class="btn btn-primary w-100">
