@@ -69,7 +69,7 @@
                             <div class="card-body">
                                 <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
                                 <h3 class="mt-3 text-success">¡Registro Insertado Correctamente!</h3>
-                                <p class="text-muted">Los datos del sensor fueron almacenados exitosamente en la base de datos.</p>
+                                <p class="text-muted">Los datos del trámite fueron almacenados exitosamente en la base de datos.</p>
                                 <a href="../front/ingresodatos.html" class="btn btn-custom text-white mt-3"><i class="bi bi-arrow-left-circle"></i> Volver</a>
                                 <a href="../sistema.html" class="btn btn-outline-secondary mt-3"><i class="bi bi-house"></i> Inicio</a>
                             </div>
@@ -127,7 +127,7 @@
                             <div class="card-body">
                                 <i class="bi bi-arrow-repeat text-success" style="font-size: 4rem;"></i>
                                 <h3 class="mt-3 text-success">¡Registro Actualizado!</h3>
-                                <p class="text-muted">El dato del sensor se modificó correctamente en la base de datos.</p>
+                                <p class="text-muted">El dato del trámite se modificó correctamente en la base de datos.</p>
                                 <a href="../front/actualizardatos.html" class="btn btn-custom text-white mt-3"><i class="bi bi-arrow-left-circle"></i> Volver</a>
                                 <a href="../sistema.html" class="btn btn-outline-secondary mt-3"><i class="bi bi-house"></i> Inicio</a>
                             </div>
@@ -185,7 +185,7 @@
                             <div class="card-body">
                                 <i class="bi bi-trash3-fill text-danger" style="font-size: 4rem;"></i>
                                 <h3 class="mt-3 text-danger">¡Registro Eliminado!</h3>
-                                <p class="text-muted">El registro del sensor fue eliminado correctamente de la base de datos.</p>
+                                <p class="text-muted">El registro del trámite fue eliminado correctamente de la base de datos.</p>
                                 <a href="../front/borrardatos.html" class="btn btn-custom text-white mt-3"><i class="bi bi-arrow-left-circle"></i> Volver</a>
                                 <a href="../sistema.html" class="btn btn-outline-secondary mt-3"><i class="bi bi-house"></i> Inicio</a>
                             </div>
@@ -227,7 +227,7 @@
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Reporte de Sensores</title>
+                    <title>Reporte de trámites</title>
 
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -255,7 +255,7 @@
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <div class="container">
                         <a class="navbar-brand fw-bold" href="../sistema.html">
-                            <i class="bi bi-cpu"></i> EcoTidy
+                            <i class="bi bi-tree-fill"></i> Cooperativa Agrícola
                         </a>
                     </div>
                 </nav>
@@ -279,7 +279,7 @@
                                         type="text"
                                         name="buscar_proveedor"
                                         class="form-control"
-                                        placeholder="Ej: EcoTidy"
+                                        placeholder="Ej: Productor/a"
                                         value="'.($inputProveedor != "" ? $inputProveedor : "").'"
                                     >
                                 </div>

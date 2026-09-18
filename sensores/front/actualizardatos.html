@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Actualizar Sensor</title>
+  <title>Actualizar trámite</title>
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -73,7 +73,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../sistema.html"><i class="bi bi-cpu"></i> EcoTidy</a>
+      <a class="navbar-brand fw-bold" href="../sistema.html"><i class="bi bi-tree-fill"></i> Cooperativa Agrícola</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -90,14 +90,14 @@
   <!-- Formulario principal -->
   <div class="container">
     <div class="form-container">
-      <h1><i class="bi bi-pencil-square"></i> Actualizar Sensor</h1>
+      <h1><i class="bi bi-pencil-square"></i> Actualizar trámite</h1>
 
       <!-- Texto explicativo para el usuario -->
       <div class="text-explanation">
         <div class="alert alert-info" role="alert">
           <h5 class="fw-bold"><i class="bi bi-info-circle"></i> ¿Qué puedes hacer aquí?</h5>
-          Esta página te permite <strong>actualizar los datos de un sensor registrado</strong> en el sistema.  
-          Simplemente ingresa el <strong>ID del sensor</strong>, los <strong>nuevos datos</strong> y su <strong>unidad de medida</strong>.  
+          Esta página permitirá <strong>actualizar un trámite registrado</strong> en el sistema.
+          La función está pendiente de completar por el equipo.
           Luego, presiona <em>"Enviar"</em> para guardar los cambios en la base de datos.
         </div>
 
@@ -106,8 +106,8 @@
           <div class="card-body">
             <h6 class="card-title"><i class="bi bi-lightbulb"></i> Cómo funciona:</h6>
             <ul class="mb-0">
-              <li>El campo <strong>ID del sensor</strong> identifica cuál sensor se actualizará.</li>
-              <li>En <strong>Nuevos datos del sensor</strong> escribes el nuevo valor medido (por ejemplo, <em>25.3</em>).</li>
+              <li>El campo <strong>ID del trámite</strong> identifica el registro que se actualizará.</li>
+              <li>El equipo debe definir qué campos del trámite podrán modificarse.</li>
               <li>En <strong>Unidad de medida</strong> indicas la unidad (como °C, %, Pa, etc.).</li>
               <li>Cuando envías el formulario, la información se envía a un archivo para procesarse.</li>
             </ul>
@@ -118,12 +118,12 @@
       <!-- Formulario -->
       <form action="../back/actualizardatos.php" method="get">
         <div class="mb-3">
-          <label for="s" class="form-label"><i class="bi bi-hash"></i> ID del sensor</label>
+          <label for="s" class="form-label"><i class="bi bi-hash"></i> ID del trámite</label>
           <input type="number" id="s" name="s" class="form-control" placeholder="Ej: 101" required>
         </div>
 
         <div class="mb-3">
-          <label for="d" class="form-label"><i class="bi bi-activity"></i> Nuevos datos del sensor</label>
+          <label for="d" class="form-label"><i class="bi bi-pencil"></i> Dato a actualizar</label>
           <input type="text" id="d" name="d" class="form-control" placeholder="Ej: 23.5" required>
         </div>
 
@@ -149,4 +149,3 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
