@@ -1,0 +1,531 @@
+
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra de Granos | Cooperativa</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2ed;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #245c3a, #3d7d4f);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 17px;
+        }
+
+        .contenedor {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .titulo-pizarra {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .titulo-pizarra h2 {
+            color: #245c3a;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .titulo-pizarra p {
+            color: #666;
+        }
+
+        /* TABLA */
+
+        .tabla-contenedor {
+            background: white;
+            border-radius: 14px;
+            overflow-x: auto;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 850px;
+        }
+
+        thead {
+            background: #245c3a;
+            color: white;
+        }
+
+        th {
+            padding: 17px 12px;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 15px 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tbody tr:hover {
+            background-color: #f4f8f3;
+        }
+
+        /* NOMBRE DEL GRANO */
+
+        .nombre-grano {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .trigo {
+            color: #b88700;
+        }
+
+        .maiz {
+            color: #d99b00;
+        }
+
+        .sorgo {
+            color: #b84a2b;
+        }
+
+        .girasol {
+            color: #d39b00;
+        }
+
+        .soja {
+            color: #477a35;
+        }
+
+        /* IMAGEN */
+
+        .imagen-grano {
+            width: 90px;
+            height: 65px;
+            margin: auto;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #dce5da;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .imagen-grano img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* PRECIO */
+
+        .precio {
+            font-size: 19px;
+            font-weight: bold;
+            color: #245c3a;
+        }
+
+        .estimado {
+            display: block;
+            font-size: 12px;
+            color: #d17b00;
+            margin-top: 4px;
+        }
+
+        /* CALCULADORA */
+
+        .calculadora {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .calculadora input {
+            width: 110px;
+            padding: 9px;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .calculadora button {
+            padding: 9px 13px;
+            background: #3d7d4f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .calculadora button:hover {
+            background: #245c3a;
+        }
+
+        /* RESULTADO */
+
+        .resultado {
+            margin: 8px 0 0;
+            font-weight: bold;
+            color: #245c3a;
+            min-height: 18px;
+        }
+
+        /* COLORES DE FILAS */
+
+        .fila-trigo {
+            border-left: 6px solid #d4ad35;
+        }
+
+        .fila-maiz {
+            border-left: 6px solid #f0c62e;
+        }
+
+        .fila-sorgo {
+            border-left: 6px solid #c45a3c;
+        }
+
+        .fila-girasol {
+            border-left: 6px solid #e0a91b;
+        }
+
+        .fila-soja {
+            border-left: 6px solid #4d8b3d;
+        }
+
+        /* INFORMACION */
+
+        .nota {
+            margin-top: 20px;
+            background: #fff7d6;
+            border-left: 5px solid #e0b72f;
+            padding: 14px;
+            border-radius: 6px;
+            color: #665719;
+        }
+
+        footer {
+            background: #214d30;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 700px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .contenedor {
+                width: 95%;
+            }
+
+            .tabla-contenedor {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Cooperativa Agropecuaria</h1>
+        <p>Información y precios de granos</p>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="titulo-pizarra">
+            <h2>🌾 Pizarra de Granos</h2>
+            <p>Precios correspondientes al 11/09/2026</p>
+        </section>
+
+        <section class="tabla-contenedor">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Grano</th>
+                        <th>Imagen</th>
+                        <th>Precio</th>
+                        <th>Cantidad de kilos</th>
+                        <th>Calcular</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- TRIGO -->
+
+                    <tr class="fila-trigo">
+
+                        <td class="nombre-grano trigo">
+                            🌾 Trigo
+                        </td>
+
+                        <td>
+                            <div class="imagen-grano">
+                                <img src="images (1).jfif" alt="Trigo">
+                            </div>
+                        </td>
+
+                        <td class="precio">
+                            $340.000
+                        </td>
+
+                        <td>
+                            <input
+                                type="number"
+                                id="kilos-trigo"
+                                placeholder="Ej: 1000"
+                                min="0"
+                            >
+                        </td>
+
+                        <td>
+                            <button onclick="calcular('trigo', 340000)">
+                                Calcular
+                            </button>
+                        </td>
+
+                        <td>
+                            <p class="resultado" id="resultado-trigo"></p>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- MAIZ -->
+
+                    <tr class="fila-maiz">
+
+                        <td class="nombre-grano maiz">
+                            🌽 Maíz
+                        </td>
+
+                        <td>
+                            <div class="imagen-grano">
+                                <img src="images.jfif" alt="Maíz">
+                            </div>
+                        </td>
+
+                        <td class="precio">
+                            $299.000
+                        </td>
+
+                        <td>
+                            <input
+                                type="number"
+                                id="kilos-maiz"
+                                placeholder="Ej: 1000"
+                                min="0"
+                            >
+                        </td>
+
+                        <td>
+                            <button onclick="calcular('maiz', 299000)">
+                                Calcular
+                            </button>
+                        </td>
+
+                        <td>
+                            <p class="resultado" id="resultado-maiz"></p>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- SORGO -->
+
+                    <tr class="fila-sorgo">
+
+                        <td class="nombre-grano sorgo">
+                            🌱 Sorgo
+                        </td>
+
+                        <td>
+                            <div class="imagen-grano">
+                                <img src="sorgo.jfif" alt="Sorgo">
+                            </div>
+                        </td>
+
+                        <td class="precio">
+                            $275.900
+                        </td>
+
+                        <td>
+                            <input
+                                type="number"
+                                id="kilos-sorgo"
+                                placeholder="Ej: 1000"
+                                min="0"
+                            >
+                        </td>
+
+                        <td>
+                            <button onclick="calcular('sorgo', 275900)">
+                                Calcular
+                            </button>
+                        </td>
+
+                        <td>
+                            <p class="resultado" id="resultado-sorgo"></p>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- GIRASOL -->
+
+                    <tr class="fila-girasol">
+
+                        <td class="nombre-grano girasol">
+                            🌻 Girasol
+                        </td>
+
+                        <td>
+                            <div class="imagen-grano">
+                                <img src="images (2).jfif" alt="Girasol">
+                            </div>
+                        </td>
+
+                        <td class="precio">
+                            $757.200
+                            <span class="estimado">Estimado</span>
+                        </td>
+
+                        <td>
+                            <input
+                                type="number"
+                                id="kilos-girasol"
+                                placeholder="Ej: 1000"
+                                min="0"
+                            >
+                        </td>
+
+                        <td>
+                            <button onclick="calcular('girasol', 757200)">
+                                Calcular
+                            </button>
+                        </td>
+
+                        <td>
+                            <p class="resultado" id="resultado-girasol"></p>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- SOJA -->
+
+                    <tr class="fila-soja">
+
+                        <td class="nombre-grano soja">
+                            🫘 Soja
+                        </td>
+
+                        <td>
+                            <div class="imagen-grano">
+                                <img src="images (3).jfif" alt="Soja">
+                            </div>
+                        </td>
+
+                        <td class="precio">
+                            $555.000
+                        </td>
+
+                        <td>
+                            <input
+                                type="number"
+                                id="kilos-soja"
+                                placeholder="Ej: 1000"
+                                min="0"
+                            >
+                        </td>
+
+                        <td>
+                            <button onclick="calcular('soja', 555000)">
+                                Calcular
+                            </button>
+                        </td>
+
+                        <td>
+                            <p class="resultado" id="resultado-soja"></p>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <div class="nota">
+            <strong>Importante:</strong> Los precios están expresados en pesos argentinos (ARS). El precio del girasol es estimado.
+        </div>
+
+    </main>
+
+    <footer>
+        Cooperativa Agropecuaria - Pizarra de precios
+    </footer>
+
+
+    <script>
+
+        function calcular(grano, precio) {
+
+            const kilos = Number(
+                document.getElementById("kilos-" + grano).value
+            );
+
+            const resultado =
+                document.getElementById("resultado-" + grano);
+
+            if (kilos <= 0 || isNaN(kilos)) {
+
+                resultado.textContent =
+                    "Ingresá una cantidad válida.";
+
+                return;
+            }
+
+            const total = precio * kilos;
+
+            resultado.textContent =
+                "$" + total.toLocaleString("es-AR");
+        }
+
+    </script>
+
+</body>
+</html>
