@@ -1,6 +1,6 @@
 # Tareas pendientes — Cooperativa Agrícola
 
-## 💡 Material de Inspiración
+##  Material de Inspiración
 
 En la carpeta `frontend_demo` van a encontrar una versión de prueba del sistema con un diseño corporativo terminado, moderno y funcional. 
 **Este material está ahí exclusivamente para que sirva como inspiración visual.** La idea es que naveguen por la demo, vean cómo está organizada la información, cómo son los formularios y cómo se muestran los datos, y traten de replicar y adaptar esa calidad estética y estructural en su propio código PHP. ¡No pueden simplemente copiar el código (porque está bloqueado y minificado), así que tendrán que pensar cómo construirlo ustedes!
