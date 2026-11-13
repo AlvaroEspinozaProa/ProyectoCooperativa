@@ -1,431 +1,268 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Cooperativa Agrícola</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- CSS propio -->
-    <link rel="stylesheet" href="../diseñosis/sistema.css">
-
-</head>
-
-
-<body>
-
-    <!-- =========================
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Cooperativa Agrícola
+  </title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- CSS propio -->
+  <link href="../diseñosis/sistema.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- =========================
          BARRA DE NAVEGACIÓN
     ========================== -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark barra-nav">
-
-        <div class="container">
-
-            <!-- Nombre de la cooperativa -->
-            <a class="navbar-brand fw-bold d-flex align-items-center"
-               href="sistema.html">
-
-                <i class="bi bi-tree-fill"></i>
-
-                <span>Cooperativa Agrícola</span>
-
-            </a>
-
-
-            <!-- Botón responsive -->
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Abrir menú">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-
-            <!-- Menú -->
-            <div class="collapse navbar-collapse justify-content-end"
-                 id="navbarNav">
-
-                <ul class="navbar-nav">
-
-                    <!-- Página principal -->
-                    <li class="nav-item">
-
-                        <a class="nav-link active"
-                           href="sistema.html">
-
-                            <i class="bi bi-house-fill"></i>
-                            Página principal
-
-                        </a>
-
-                    </li>
-
-
-                    <!-- Registrar trámite -->
-                    <li class="nav-item">
-
-                        <a class="nav-link"
-                           href="front/ingresodatos.html">
-
-                            <i class="bi bi-pencil-square"></i>
-                            Registrar trámite
-
-                        </a>
-
-                    </li>
-
-
-                    <!-- Reportes -->
-                    <li class="nav-item">
-
-                        <a class="nav-link"
-                           href="front/reporte.html">
-
-                            <i class="bi bi-file-earmark-text"></i>
-                            Reportes
-
-                        </a>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-
-    <!-- =========================
+  <nav class="navbar navbar-expand-lg navbar-dark barra-nav">
+   <div class="container">
+    <!-- Nombre de la cooperativa -->
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="sistema.html">
+     <i class="bi bi-tree-fill">
+     </i>
+     <span>
+      Cooperativa Agrícola
+     </span>
+    </a>
+    <!-- Botón responsive -->
+    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <!-- Menú -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+     <ul class="navbar-nav">
+      <!-- Página principal -->
+      <li class="nav-item">
+       <a class="nav-link active" href="sistema.html">
+        <i class="bi bi-house-fill">
+        </i>
+        Página principal
+       </a>
+      </li>
+      <!-- Registrar trámite -->
+      <li class="nav-item">
+       <a class="nav-link" href="front/ingresodatos.html">
+        <i class="bi bi-pencil-square">
+        </i>
+        Registrar trámite
+       </a>
+      </li>
+      <!-- Reportes -->
+      <li class="nav-item">
+       <a class="nav-link" href="front/reporte.html">
+        <i class="bi bi-file-earmark-text">
+        </i>
+        Reportes
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <!-- =========================
          CONTENEDOR PRINCIPAL
     ========================== -->
-
-    <main class="contenedor">
-
-
-        <!-- Encabezado -->
-
-        <div class="encabezado">
-
-            <div class="icono-principal">
-
-                <i class="bi bi-tree-fill"></i>
-
-            </div>
-
-            <div>
-
-                <h1>
-                    Gestión de la Cooperativa
-                </h1>
-
-                <p>
-                    Administración de trámites y productores
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================
+  <main class="contenedor">
+   <!-- Encabezado -->
+   <div class="encabezado">
+    <div class="icono-principal">
+     <i class="bi bi-tree-fill">
+     </i>
+    </div>
+    <div>
+     <h1>
+      Gestión de la Cooperativa
+     </h1>
+     <p>
+      Administración de trámites y productores
+     </p>
+    </div>
+   </div>
+   <!-- =========================
              INFORMACIÓN
         ========================== -->
-
-        <div class="text-explanation">
-
-            <div class="alert alert-info" role="alert">
-
-                <h5 class="fw-bold">
-
-                    <i class="bi bi-info-circle"></i>
-
-                    Bienvenido al sistema de la cooperativa
-
-                </h5>
-
-                <p class="mb-0">
-
-                    Desde esta sección podés administrar la información
-                    relacionada con los <strong>productores y propietarios
-                    de los campos</strong> que forman parte de la cooperativa.
+   <div class="text-explanation">
+    <div class="alert alert-info" role="alert">
+     <h5 class="fw-bold">
+      <i class="bi bi-info-circle">
+      </i>
+      Bienvenido al sistema de la cooperativa
+     </h5>
+     <p class="mb-0">
+      Desde esta sección podés administrar la información
+                    relacionada con los
+      <strong>
+       productores y propietarios
+                    de los campos
+      </strong>
+      que forman parte de la cooperativa.
 
                     Podés registrar nuevos trámites, actualizar información,
                     consultar los registros y generar reportes para llevar
                     un mejor control de las actividades realizadas.
-
-                </p>
-
-            </div>
-
-
-            <!-- =========================
+     </p>
+    </div>
+    <!-- =========================
                  INFORMACIÓN DEL SISTEMA
             ========================== -->
-
-            <div class="card informacion-card shadow-sm">
-
-                <div class="card-body">
-
-                    <h6 class="card-title">
-
-                        <i class="bi bi-lightbulb"></i>
-
-                        ¿Qué podés hacer desde aquí?
-
-                    </h6>
-
-
-                    <div class="row g-3">
-
-
-                        <!-- Trámites -->
-
-                        <div class="col-md-6">
-
-                            <div class="info-burbuja">
-
-                                <div class="info-icon">
-
-                                    <i class="bi bi-file-earmark-text"></i>
-
-                                </div>
-
-                                <div>
-
-                                    <strong>Registrar trámites</strong>
-
-                                    <p>
-                                        Registrá las gestiones realizadas
+    <div class="card informacion-card shadow-sm">
+     <div class="card-body">
+      <h6 class="card-title">
+       <i class="bi bi-lightbulb">
+       </i>
+       ¿Qué podés hacer desde aquí?
+      </h6>
+      <div class="row g-3">
+       <!-- Trámites -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-file-earmark-text">
+          </i>
+         </div>
+         <div>
+          <strong>
+           Registrar trámites
+          </strong>
+          <p>
+           Registrá las gestiones realizadas
                                         por los productores de la cooperativa,
                                         indicando la fecha, hora, dirección
                                         y tipo de trámite.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Productores -->
-
-                        <div class="col-md-6">
-
-                            <div class="info-burbuja">
-
-                                <div class="info-icon">
-
-                                    <i class="bi bi-person-fill"></i>
-
-                                </div>
-
-                                <div>
-
-                                    <strong>Información de productores</strong>
-
-                                    <p>
-                                        Consultá y administrá los datos
+          </p>
+         </div>
+        </div>
+       </div>
+       <!-- Productores -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-person-fill">
+          </i>
+         </div>
+         <div>
+          <strong>
+           Información de productores
+          </strong>
+          <p>
+           Consultá y administrá los datos
                                         correspondientes a los dueños
                                         y productores de los campos.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Actualización -->
-
-                        <div class="col-md-6">
-
-                            <div class="info-burbuja">
-
-                                <div class="info-icon">
-
-                                    <i class="bi bi-pencil-square"></i>
-
-                                </div>
-
-                                <div>
-
-                                    <strong>Actualizar información</strong>
-
-                                    <p>
-                                        Modificá los datos registrados
+          </p>
+         </div>
+        </div>
+       </div>
+       <!-- Actualización -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-pencil-square">
+          </i>
+         </div>
+         <div>
+          <strong>
+           Actualizar información
+          </strong>
+          <p>
+           Modificá los datos registrados
                                         cuando sea necesario para mantener
                                         la información actualizada.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Reportes -->
-
-                        <div class="col-md-6">
-
-                            <div class="info-burbuja">
-
-                                <div class="info-icon">
-
-                                    <i class="bi bi-bar-chart-fill"></i>
-
-                                </div>
-
-                                <div>
-
-                                    <strong>Consultar reportes</strong>
-
-                                    <p>
-                                        Accedé a los reportes de trámites
+          </p>
+         </div>
+        </div>
+       </div>
+       <!-- Reportes -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-bar-chart-fill">
+          </i>
+         </div>
+         <div>
+          <strong>
+           Consultar reportes
+          </strong>
+          <p>
+           Accedé a los reportes de trámites
                                         realizados y consultá la información
                                         almacenada en el sistema.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          </p>
+         </div>
         </div>
-
-
-        <!-- =========================
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- =========================
              OPCIONES PRINCIPALES
         ========================== -->
-
-        <div class="opciones">
-
-            <h5>
-
-                <i class="bi bi-grid-fill"></i>
-
-                Opciones principales
-
-            </h5>
-
-
-            <div class="row g-3">
-
-
-                <!-- Registrar trámite -->
-
-                <div class="col-md-4">
-
-                    <a href="front/ingresodatos.html"
-                       class="btn btn-custom w-100">
-
-                        <i class="bi bi-plus-circle"></i>
-
-                        Registrar trámite
-
-                    </a>
-
-                </div>
-
-
-                <!-- Actualizar -->
-
-                <div class="col-md-4">
-
-                    <a href="front/actualizardatos.html"
-                       class="btn btn-custom w-100">
-
-                        <i class="bi bi-pencil"></i>
-
-                        Actualizar datos
-
-                    </a>
-
-                </div>
-
-
-                <!-- Borrar -->
-
-                <div class="col-md-4">
-
-                    <a href="front/borrardatos.html"
-                       class="btn btn-custom w-100">
-
-                        <i class="bi bi-trash"></i>
-
-                        Eliminar registro
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Reporte -->
-
-            <a href="front/reporte.html"
-               class="btn btn-outline-secondary mt-3 w-100">
-
-                <i class="bi bi-file-earmark-text"></i>
-
-                Consultar reportes
-
-            </a>
-
-
-            <!-- Cambiar usuario -->
-
-            <a href="../home_page.html"
-               class="btn btn-outline-secondary mt-3 w-100">
-
-                <i class="bi bi-person"></i>
-
-                Cambiar de usuario
-
-            </a>
-
-        </div>
-
-
-    </main>
-
-
-    <!-- Bootstrap JS -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
-</body>
-
+   <div class="opciones">
+    <h5>
+     <i class="bi bi-grid-fill">
+     </i>
+     Opciones principales
+    </h5>
+    <div class="row g-3">
+     <!-- Registrar trámite -->
+     <div class="col-md-6 col-lg-3">
+      <a class="btn btn-custom w-100" href="front/ingresodatos.html">
+       <i class="bi bi-plus-circle">
+       </i>
+       Registrar trámite
+      </a>
+     </div>
+     <!-- Actualizar -->
+     <div class="col-md-6 col-lg-3">
+      <a class="btn btn-custom w-100" href="front/actualizardatos.html">
+       <i class="bi bi-pencil">
+       </i>
+       Actualizar datos
+      </a>
+     </div>
+     <!-- Eliminar -->
+     <div class="col-md-6 col-lg-3">
+      <a class="btn btn-custom w-100" href="../sensores/front/borrardatos.html">
+       <i class="bi bi-trash">
+       </i>
+       Eliminar registro
+      </a>
+     </div>
+     <!-- Comprar productos -->
+     <div class="col-md-6 col-lg-3">
+      <a class="btn btn-custom w-100" href="../ventaproductos/coperativa_campogranos.html">
+       <i class="bi bi-cart-fill">
+       </i>
+       Comprar productos
+      </a>
+     </div>
+    </div>
+   </div>
+   <!-- Reporte -->
+   <a class="btn btn-outline-secondary mt-3 w-100" href="front/reporte.html">
+    <i class="bi bi-file-earmark-text">
+    </i>
+    Consultar reportes
+   </a>
+   <!-- Cambiar usuario -->
+   <a class="btn btn-outline-secondary mt-3 w-100" href="../home_page.html">
+    <i class="bi bi-person">
+    </i>
+    Cambiar de usuario
+   </a>
+  </main>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+  </script>
+  <script src="../assets/js/supabase.js">
+  </script>
+  <script src="../assets/js/auth-guard.js">
+  </script>
+ </body>
 </html>
-
-

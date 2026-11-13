@@ -1,312 +1,292 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Trámite</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../diseño/ingresodatos.css">
-</head>
-
-<body>
-
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark barra-nav">
-        <div class="container">
-
-            <a class="navbar-brand fw-bold" href="../sistema.html">
-                <i class="bi bi-building"></i> Cooperativa
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menu">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../sistema.html">
-                            <i class="bi bi-house"></i> Inicio
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <i class="bi bi-pencil-square"></i> Registrar trámite
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../front/reporte.html">
-                            <i class="bi bi-file-earmark-text"></i> Reportes
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-    </nav>
-
-    <div class="contenedor">
-
-        <!-- Información -->
-        <div class="text-explanation">
-
-            <div class="alert alert-info">
-
-                <h5>
-                    <i class="bi bi-info-circle"></i>
-                    ¿Qué puedes hacer aquí?
-                </h5>
-
-                En esta sección puedes registrar un nuevo trámite realizado por un proveedor de la cooperativa.
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Registrar Trámite
+  </title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- CSS -->
+  <link href="../diseño/ingresodatos.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark barra-nav">
+   <div class="container">
+    <a class="navbar-brand fw-bold" href="../sistema.html">
+     <i class="bi bi-building">
+     </i>
+     Cooperativa
+    </a>
+    <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="../sistema.html">
+        <i class="bi bi-house">
+        </i>
+        Inicio
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link active" href="#">
+        <i class="bi bi-pencil-square">
+        </i>
+        Registrar trámite
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="../front/reporte.html">
+        <i class="bi bi-file-earmark-text">
+        </i>
+        Reportes
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <div class="contenedor">
+   <!-- Información -->
+   <div class="text-explanation">
+    <div class="alert alert-info">
+     <h5>
+      <i class="bi bi-info-circle">
+      </i>
+      ¿Qué puedes hacer aquí?
+     </h5>
+     En esta sección puedes registrar un nuevo trámite realizado por un proveedor de la cooperativa.
                 Completa el nombre del proveedor, la fecha del trámite, la hora, la dirección y la información
                 correspondiente para guardar el registro en el sistema.
-
-            </div>
-
-                    <div class="card shadow-sm">
-
-            <div class="card-body">
-
-                <h6 class="mb-4">
-                    <i class="bi bi-lightbulb"></i>
-                    Información sobre el registro
-                </h6>
-
-                <div class="row g-3">
-
-                    <!-- Proveedor -->
-                    <div class="col-md-6">
-                        <div class="info-burbuja">
-                            <div class="info-icon">
-                                <i class="bi bi-person-fill"></i>
-                            </div>
-
-                            <div>
-                                <strong>Proveedor</strong>
-                                <p>
-                                    Nombre de la persona o empresa que realizó el trámite.
-                                    Permite identificar quién llevó a cabo la gestión.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Fecha -->
-                    <div class="col-md-6">
-                        <div class="info-burbuja">
-                            <div class="info-icon">
-                                <i class="bi bi-calendar-event"></i>
-                            </div>
-
-                            <div>
-                                <strong>Fecha</strong>
-                                <p>
-                                    Día en que se realizó el trámite.
-                                    Ayuda a mantener un registro ordenado de cada gestión.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Hora -->
-                    <div class="col-md-6">
-                        <div class="info-burbuja">
-                            <div class="info-icon">
-                                <i class="bi bi-clock"></i>
-                            </div>
-
-                            <div>
-                                <strong>Hora</strong>
-                                <p>
-                                    Momento en que se realizó o registró el trámite.
-                                    Permite llevar un control más detallado de las actividades.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Dirección -->
-                    <div class="col-md-6">
-                        <div class="info-burbuja">
-                            <div class="info-icon">
-                                <i class="bi bi-geo-alt-fill"></i>
-                            </div>
-
-                            <div>
-                                <strong>Dirección</strong>
-                                <p>
-                                    Domicilio o ubicación relacionada con el proveedor.
-                                    Permite identificar el lugar correspondiente al trámite.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tipo de trámite -->
-                    <div class="col-md-6">
-                        <div class="info-burbuja">
-                            <div class="info-icon">
-                                <i class="bi bi-file-earmark-text"></i>
-                            </div>
-
-                            <div>
-                                <strong>UNDM</strong>
-                                <p>
-                                    Tipo de unidad de medida utilizada, ejemplo: kilogramo, toneladas, litros, etc.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Formulario -->
-
-        <form action="../back/ingresodatos.php" method="get">
-
-            <div class="mb-3">
-                <label for="id" class="form-label">
-                    <i class="bi bi-person-fill"></i>
-                    Nombre del proveedor
-                </label>
-
-                <input type="text" class="form-control" id="id" name="id" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="f" class="form-label">
-                    <i class="bi bi-calendar-event"></i>
-                    Fecha del trámite
-                </label>
-
-                <input type="date" class="form-control" id="f" name="f" required>
-            </div>
-            <div class="mb-3">
-
-                <label for="mat" class="form-label">
-                    <i class="bi bi-truck"></i>
-                    Matrícula del transporte
-                </label>
-
-                <input type="text"
-                    class="form-control"
-                    name="mat"
-                    id="mat"
-                    placeholder="Ingrese la matrícula del transporte"
-                    required>
-
-            </div>
-
-            <div class="mb-3">
-                <label for="h" class="form-label">
-                    <i class="bi bi-clock"></i>
-                    Hora
-                </label>
-
-                <input type="time" class="form-control" id="h" name="h" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="s" class="form-label">
-                    <i class="bi bi-geo-alt-fill"></i>
-                    Dirección
-                </label>
-
-                <input type="text" class="form-control" id="s" name="s" required>
-            </div>
-            <div class="mb-3">
-
-                <label for="prod" class="form-label">
-                    <i class="bi bi-box-seam"></i>
-                    Producto a transportar
-                </label>
-
-                <select class="form-select" name="prod" id="prod" required>
-
-                    <option value="" selected disabled>
-                        Seleccioná un producto
-                    </option>
-
-                    <option value="soja">Soja</option>
-                    <option value="maiz">Maíz</option>
-                    <option value="trigo">Trigo</option>
-                    <option value="girasol">Girasol</option>
-                    <option value="sorgo">Sorgo</option>
-                    <option value="otro">Otro</option>
-
-                </select>
-
-            </div>
-            <div class="mb-3">
-
-                <label for="undm" class="form-label">
-                    <i class="bi bi-file-earmark-text"></i>
-                    Unidad de medida
-                </label>
-
-                <select name="undm" id="undm" class="form-select" required>
-
-                    <option value="" selected disabled>
-                        Seleccione la unidad de medida
-                    </option>
-
-                    <option value="kg">
-                        Kg
-                    </option>
-
-                    <option value="t">
-                        Toneladas
-                    </option>
-
-                    <option value="otro">
-                        Otro
-                    </option>
-
-                </select>
-
-            </div>
-
-            <button type="submit" class="btn btn-primary w-100">
-                <i class="bi bi-check-circle"></i>
-                Registrar trámite
-            </button>
-
-            <hr>
-
-            <div class="text-center">
-
-                <a href="../sistema.html" class="btn btn-outline-secondary">
-                    <i class="bi bi-house"></i>
-                    Volver al inicio
-                </a>
-
-            </div>
-
-        </form>
-
     </div>
-
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
+    <div class="card shadow-sm">
+     <div class="card-body">
+      <h6 class="mb-4">
+       <i class="bi bi-lightbulb">
+       </i>
+       Información sobre el registro
+      </h6>
+      <div class="row g-3">
+       <!-- Proveedor -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-person-fill">
+          </i>
+         </div>
+         <div>
+          <strong>
+           Proveedor
+          </strong>
+          <p>
+           Nombre de la persona o empresa que realizó el trámite.
+                                    Permite identificar quién llevó a cabo la gestión.
+          </p>
+         </div>
+        </div>
+       </div>
+       <!-- Fecha -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-calendar-event">
+          </i>
+         </div>
+         <div>
+          <strong>
+           Fecha
+          </strong>
+          <p>
+           Día en que se realizó el trámite.
+                                    Ayuda a mantener un registro ordenado de cada gestión.
+          </p>
+         </div>
+        </div>
+       </div>
+       <!-- Hora -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-clock">
+          </i>
+         </div>
+         <div>
+          <strong>
+           Hora
+          </strong>
+          <p>
+           Momento en que se realizó o registró el trámite.
+                                    Permite llevar un control más detallado de las actividades.
+          </p>
+         </div>
+        </div>
+       </div>
+       <!-- Dirección -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-geo-alt-fill">
+          </i>
+         </div>
+         <div>
+          <strong>
+           Dirección
+          </strong>
+          <p>
+           Domicilio o ubicación relacionada con el proveedor.
+                                    Permite identificar el lugar correspondiente al trámite.
+          </p>
+         </div>
+        </div>
+       </div>
+       <!-- Tipo de trámite -->
+       <div class="col-md-6">
+        <div class="info-burbuja">
+         <div class="info-icon">
+          <i class="bi bi-file-earmark-text">
+          </i>
+         </div>
+         <div>
+          <strong>
+           UNDM
+          </strong>
+          <p>
+           Tipo de unidad de medida utilizada, ejemplo: kilogramo, toneladas, litros, etc.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Formulario -->
+    <form id="formIngreso">
+     <div class="mb-3">
+      <label class="form-label" for="id">
+       <i class="bi bi-person-fill">
+       </i>
+       Nombre del proveedor
+      </label>
+      <input class="form-control" id="id" name="id" required="" type="text"/>
+     </div>
+     <div class="mb-3">
+      <label class="form-label" for="f">
+       <i class="bi bi-calendar-event">
+       </i>
+       Fecha del trámite
+      </label>
+      <input class="form-control" id="f" name="f" required="" type="date"/>
+     </div>
+     <div class="mb-3">
+      <label class="form-label" for="mat">
+       <i class="bi bi-truck">
+       </i>
+       Matrícula del transporte
+      </label>
+      <input class="form-control" id="mat" name="mat" placeholder="Ingrese la matrícula del transporte" required="" type="text"/>
+     </div>
+     <div class="mb-3">
+      <label class="form-label" for="h">
+       <i class="bi bi-clock">
+       </i>
+       Hora
+      </label>
+      <input class="form-control" id="h" name="h" required="" type="time"/>
+     </div>
+     <div class="mb-3">
+      <label class="form-label" for="s">
+       <i class="bi bi-geo-alt-fill">
+       </i>
+       Dirección
+      </label>
+      <input class="form-control" id="s" name="s" required="" type="text"/>
+     </div>
+     <div class="mb-3">
+      <label class="form-label" for="prod">
+       <i class="bi bi-box-seam">
+       </i>
+       Producto a transportar
+      </label>
+      <select class="form-select" id="prod" name="prod" required="">
+       <option disabled="" selected="" value="">
+        Seleccioná un producto
+       </option>
+       <option value="soja">
+        Soja
+       </option>
+       <option value="maiz">
+        Maíz
+       </option>
+       <option value="trigo">
+        Trigo
+       </option>
+       <option value="girasol">
+        Girasol
+       </option>
+       <option value="sorgo">
+        Sorgo
+       </option>
+       <option value="otro">
+        Otro
+       </option>
+      </select>
+     </div>
+     <div class="mb-3">
+      <label class="form-label" for="undm">
+       <i class="bi bi-file-earmark-text">
+       </i>
+       Unidad de medida
+      </label>
+      <select class="form-select" id="undm" name="undm" required="">
+       <option disabled="" selected="" value="">
+        Seleccione la unidad de medida
+       </option>
+       <option value="kg">
+        Kg
+       </option>
+       <option value="t">
+        Toneladas
+       </option>
+       <option value="otro">
+        Otro
+       </option>
+      </select>
+     </div>
+     <button class="btn btn-primary w-100" type="submit">
+      <i class="bi bi-check-circle">
+      </i>
+      Registrar trámite
+     </button>
+     <hr/>
+     <div class="text-center">
+      <a class="btn btn-outline-secondary" href="../sistema.html">
+       <i class="bi bi-house">
+       </i>
+       Volver al inicio
+      </a>
+     </div>
+     <div class="alert d-none" id="resultadoOperacion">
+     </div>
+    </form>
+   </div>
+   <!-- Bootstrap -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+   </script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+  </script>
+  <script src="../../assets/js/supabase.js">
+  </script>
+  <script src="../../assets/js/auth-guard.js">
+  </script>
+  <script src="../js/tramites.js">
+  </script>
+ </body>
 </html>

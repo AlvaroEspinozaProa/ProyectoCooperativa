@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cooperativa Agrícola</title>
-
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Sistema de Cooperativa Agrícola
+  </title>
   <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
-    body {
+   body {
       background: linear-gradient(135deg, #e3f2fd, #bbdefb);
       min-height: 100vh;
       display: flex;
@@ -78,61 +78,69 @@
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
-</head>
-
-<body>
-
+ </head>
+ <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-box-seam" viewBox="0 0 16 16">
-          <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v1.528a.5.5 0 0 1-.276.447L8.276 6.447a.5.5 0 0 1-.552 0L1.776 3.475A.5.5 0 0 1 1.5 3.028V1.5z"/>
-          <path d="M8 7.028 2 4.058v7.914L8 14.972l6-2.999V4.058L8 7.028z"/>
-        </svg>
-        Cooperativa Agrícola
-      </a>
-    </div>
+   <div class="container">
+    <a class="navbar-brand" href="#">
+     <svg class="bi bi-box-seam" fill="white" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v1.528a.5.5 0 0 1-.276.447L8.276 6.447a.5.5 0 0 1-.552 0L1.776 3.475A.5.5 0 0 1 1.5 3.028V1.5z">
+      </path>
+      <path d="M8 7.028 2 4.058v7.914L8 14.972l6-2.999V4.058L8 7.028z">
+      </path>
+     </svg>
+     Cooperativa Agrícola
+    </a>
+   </div>
   </nav>
-
   <!-- Contenido principal -->
   <main>
-    <div class="form-section">
-      <h2>Ingreso de Usuario</h2>
-      <form action="login/back/validar_ingreso.php" method="get" autocomplete="off">
-        <div class="mb-3">
-          <label for="usuario" class="form-label">Usuario</label>
-          <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="contrasena" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" name="email" id="email" placeholder="ejemplo@correo.com" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100">Ingresar</button>
-
-        <div class="d-flex justify-content-between mt-3">
-          <a href="login/front/formulario_registro.html">Registrarse</a>
-          <a href="login/front/cambio_contraseña.html">¿Olvidaste tu contraseña?</a>
-        </div>
-      </form>
-    </div>
+   <div class="form-section">
+    <h2>
+     Ingreso de Usuario
+    </h2>
+    <form autocomplete="off" id="loginForm">
+     <div class="mb-3">
+      <label class="form-label" for="contrasena">
+       Contraseña
+      </label>
+      <input class="form-control" id="contrasena" name="password" placeholder="Ingrese su contraseña" required="" type="password"/>
+     </div>
+     <div class="mb-3">
+      <label class="form-label" for="email">
+       Correo electrónico
+      </label>
+      <input class="form-control" id="email" name="email" placeholder="ejemplo@correo.com" required="" type="email"/>
+     </div>
+     <button class="btn btn-primary w-100" type="submit">
+      Ingresar
+     </button>
+     <div class="d-flex justify-content-between mt-3">
+      <a href="login/front/formulario_registro.html">
+       Registrarse
+      </a>
+      <a href="login/front/cambio_contraseña.html">
+       ¿Olvidaste tu contraseña?
+      </a>
+     </div>
+     <div class="alert d-none" id="authMessage">
+     </div>
+    </form>
+   </div>
   </main>
-
   <!-- Footer -->
   <footer>
-    © 2025 Cooperativa Agrícola | Sistema en desarrollo para registrar movimientos de productores y transportes
+   © 2026 Sistema de Cooperativa Agrícola | Desarrollado por tu equipo
   </footer>
-
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+  </script>
+  <script src="assets/js/supabase.js">
+  </script>
+  <script src="assets/js/auth.js">
+  </script>
+ </body>
 </html>
-
-
