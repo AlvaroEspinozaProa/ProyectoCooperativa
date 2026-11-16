@@ -7,6 +7,19 @@ function mostrarResultado(elemento, texto, tipo = "info") {
     elemento.classList.remove("d-none");
 }
 
+async function sesionActiva(elemento) {
+    if (!db) {
+        mostrarResultado(elemento, "Falta configurar Supabase.", "warning");
+        return false;
+    }
+    const { data, error } = await db.auth.getSession();
+    if (error || !data.session) {
+        mostrarResultado(elemento, "Tu sesión no está activa. Volvé a iniciar sesión.", "warning");
+        return false;
+    }
+    return true;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // REGISTRAR TRÁMITE
     const formIngreso = document.getElementById("formIngreso");
@@ -14,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formIngreso.addEventListener("submit", async (event) => {
             event.preventDefault();
             const mensaje = document.getElementById("resultadoOperacion");
+            if (!await sesionActiva(mensaje)) return;
             const tramite = {
                 proveedor: document.getElementById("id").value.trim(),
                 fecha: document.getElementById("f").value,
@@ -43,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnBuscar.addEventListener("click", async () => {
             const id = document.getElementById("id").value;
             const mensaje = document.getElementById("resultadoOperacion");
+            if (!await sesionActiva(mensaje)) return;
             if (!id) {
                 mostrarResultado(mensaje, "Ingresá el ID del registro que querés buscar.", "warning");
                 return;
@@ -73,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             const id = document.getElementById("id").value;
             const mensaje = document.getElementById("resultadoOperacion");
+            if (!await sesionActiva(mensaje)) return;
 
             const cambios = {
                 proveedor: document.getElementById("proveedor").value.trim(),
@@ -109,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             const id = document.getElementById("n").value;
             const mensaje = document.getElementById("resultadoOperacion");
+            if (!await sesionActiva(mensaje)) return;
 
             if (!confirm(`¿Seguro que querés eliminar el registro ${id}?`)) return;
 

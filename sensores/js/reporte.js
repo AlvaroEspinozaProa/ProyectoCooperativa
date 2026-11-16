@@ -10,6 +10,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     const mensaje = document.getElementById("mensajeReporte");
     let tramites = [];
 
+    if (!reportDb) {
+        mensaje.textContent = "Falta configurar Supabase.";
+        mensaje.className = "alert alert-warning";
+        return;
+    }
+    const { data: sesion, error: sessionError } = await reportDb.auth.getSession();
+    if (sessionError || !sesion.session) {
+        mensaje.textContent = "Tu sesión no está activa. Volvé a iniciar sesión.";
+        mensaje.className = "alert alert-warning";
+        return;
+    }
+
     function mostrarFilas(lista) {
         tbody.innerHTML = "";
 

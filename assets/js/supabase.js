@@ -1,22 +1,30 @@
+// Reemplazá estos dos valores con los datos públicos de tu proyecto Supabase.
+const SUPABASE_URL = ""; // PEGAR_AQUI_TU_PROJECT_URL
+const SUPABASE_PUBLISHABLE_KEY = ""; // PEGAR_AQUI_TU_PUBLISHABLE_O_ANON_KEY
 
-// ==========================================
-// CONEXIÓN CON SUPABASE
-// ==========================================
+function esClavePublica(clave) {
+    if (clave.startsWith("sb_secret_")) return false;
+    if (clave.startsWith("sb_publishable_")) return true;
 
-// Datos de tu proyecto Supabase
-const SUPABASE_URL = "https://iyvcpklaegbcjcgikalw.supabase.co";
+    try {
+        const payload = clave.split(".")[1];
+        const base64 = payload && payload.replace(/-/g, "+").replace(/_/g, "/");
+        return base64 && JSON.parse(atob(base64.padEnd(Math.ceil(base64.length / 4) * 4, "="))).role === "anon";
+    } catch {
+        return false;
+    }
+}
 
-const SUPABASE_KEY = "sb_publishable_f5TiokGXUYMxAKWZq8_qIg_o2OUY7Tv";
+const configuracionLista =
+    /^https:\/\/[^\s]+\.supabase\.co$/.test(SUPABASE_URL) &&
+    esClavePublica(SUPABASE_PUBLISHABLE_KEY);
 
-// Crear conexión con Supabase
-const { createClient } = window.supabase;
-
-const supabaseClient = createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
-
-// Hacer disponible la conexión en todo el proyecto
-window.supabaseClient = supabaseClient;
-
-console.log("Conexión con Supabase preparada correctamente");
+if (!configuracionLista || !window.supabase) {
+    window.supabaseClient = null;
+    console.error("Falta configurar Supabase. Consultá README_SUPABASE.md.");
+} else {
+    window.supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+}

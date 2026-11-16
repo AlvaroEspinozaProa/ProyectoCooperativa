@@ -1,10 +1,16 @@
 // Protege las páginas internas y agrega un botón para cerrar sesión.
 document.addEventListener("DOMContentLoaded", async () => {
+    const isFrontPage = window.location.pathname.includes("/sensores/front/");
+    const loginUrl = isFrontPage ? "../../home_page.html" : "../home_page.html";
+    if (!window.supabaseClient) {
+        window.location.href = loginUrl;
+        return;
+    }
+
     const { data, error } = await window.supabaseClient.auth.getSession();
 
     if (error || !data.session) {
-        const isFrontPage = window.location.pathname.includes("/sensores/front/");
-        window.location.href = isFrontPage ? "../../home_page.html" : "../home_page.html";
+        window.location.href = loginUrl;
         return;
     }
 
@@ -16,10 +22,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         nav.appendChild(item);
 
         document.getElementById("logoutButton").addEventListener("click", async () => {
-            await window.supabaseClient.auth.signOut();
-            window.location.href = window.location.pathname.includes("/sensores/front/")
-                ? "../../home_page.html"
-                : "../home_page.html";
+            const { error: signOutError } = await window.supabaseClient.auth.signOut();
+            if (signOutError) {
+                console.error(signOutError);
+                return;
+            }
+            window.location.href = loginUrl;
         });
     }
 });

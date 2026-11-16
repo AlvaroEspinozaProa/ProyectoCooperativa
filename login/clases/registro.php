@@ -137,7 +137,7 @@ class usuario {
                             <h3 class="mt-3 text-success">¡Contraseña Actualizada!</h3>
                             <p class="text-muted">La contraseña se ha modificado correctamente.</p>
 
-                            <a href="../front/cambio_contraseña.html" class="btn btn-custom text-white mt-3">
+                            <a href="../front/cambio_contrasena.html" class="btn btn-custom text-white mt-3">
                                 <i class="bi bi-arrow-left-circle"></i> Volver
                             </a>
                             <a href="../../home_page.html" class="btn btn-outline-secondary mt-3">
